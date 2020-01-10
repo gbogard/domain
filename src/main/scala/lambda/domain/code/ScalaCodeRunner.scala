@@ -1,9 +1,11 @@
 package lambda.domain.code
 
 import java.io.File
-import scala.concurrent.duration._
 import ScalaCodeRunner._
 import com.colisweb.tracing.TracingContext
+
+import scala.language.postfixOp
+import scala.concurrent.duration._
 
 trait ScalaCodeRunner[F[_]] {
   def run(
