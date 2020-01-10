@@ -1,24 +1,24 @@
 package lambda.domain.code
 
 import java.io.File
-import scala.concurrent.duration._
 import ScalaCodeRunner._
-import com.colisweb.tracing.TracingContext
+
+import scala.language.postfixOps
+import scala.concurrent.duration._
 
 trait ScalaCodeRunner[F[_]] {
-  def run(
+  def runFiles(
       files: List[File],
-      mainClass: String,
       dependencies: List[ScalaDependency] = Nil,
       timeout: FiniteDuration = 30 seconds
-  )(implicit tracingContext: TracingContext[F]): ProcessResult[F]
+  ): ProcessResult[F]
 
-  def run(
+  def runCode(
     code: String,
     mainClass: String,
     dependencies: List[ScalaDependency] = Nil,
     timeout: FiniteDuration = 30 seconds
-  )(implicit tracingContext: TracingContext[F]): ProcessResult[F]
+  ): ProcessResult[F]
 }
 
 object ScalaCodeRunner {

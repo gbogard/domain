@@ -1,9 +1,6 @@
-name: Publish
+name: CI
 
-on:
-  push:
-    branches:
-      - master
+on: pull_request
 env:
   GITHUB_USER: CI
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -19,4 +16,4 @@ jobs:
         with:
           java-version: 1.8
       - name: Run tests
-        run: sbt tests
+        run: sbt test
