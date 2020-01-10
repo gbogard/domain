@@ -7,12 +7,21 @@ import lambda.domain.courses.{MarkdownText, MultipleChoices, WidgetId}
 class WidgetsSpec extends FunSpec with Matchers {
 
   describe("Widget type") {
-    it("Should be 'scala2Code' for Scala2CodeWidget") {
-      Scala2CodeWidget(
-        WidgetId(""),
-        Nil,
-        "Main"
-      ).widgetType shouldBe "scala2Code"
+    it("Should be 'simpleScala2' for SimpleScala2CodeWidget") {
+      SimpleScala2CodeWidget(
+        id = WidgetId(""),
+        baseFiles = Nil,
+        defaultValue = ""
+      ).widgetType shouldBe "simpleScala2"
+    }
+
+
+    it("Should be 'tabbedScala2' for TabbedScala2CodeWidget") {
+      TabbedScala2CodeWidget(
+        id = WidgetId(""),
+        tabs = Nil,
+        baseFiles = Nil,
+      ).widgetType shouldBe "tabbedScala2"
     }
 
     it("Should be 'markdownText' for MarkdownText") {

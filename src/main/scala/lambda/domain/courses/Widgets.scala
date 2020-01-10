@@ -50,7 +50,6 @@ object InteractiveCodeWidget {
     id: WidgetId,
     tabs: List[SourceFile],
     baseFiles: List[SourceFile],
-    manClass: String,
     dependencies: List[ScalaDependency] = Nil,
     required: Boolean = false
   ) extends InteractiveCodeWidget {
