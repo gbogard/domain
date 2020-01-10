@@ -30,21 +30,32 @@ object MultipleChoices {
 }
 
 sealed trait InteractiveCodeWidget extends InteractiveWidget {
-  def defaultValue: String
   def language: Language
 }
 
 object InteractiveCodeWidget {
-  case class Scala2CodeWidget(
-      id: WidgetId,
-      baseFiles: List[SourceFile],
-      mainClass: String,
-      defaultValue: String = "",
-      dependencies: List[ScalaDependency] = Nil,
-      required: Boolean = false
+
+  case class SimpleScala2CodeWidget(
+    id: WidgetId,
+    baseFiles: List[SourceFile],
+    defaultValue: String,
+    dependencies: List[ScalaDependency] = Nil,
+    required: Boolean = false
   ) extends InteractiveCodeWidget {
     val language = Scala2
-    val widgetType: String = "scala2Code"
+    val widgetType: String = "simpleScala2"
+  }
+
+  case class TabbedScala2CodeWidget(
+    id: WidgetId,
+    tabs: List[SourceFile],
+    baseFiles: List[SourceFile],
+    manClass: String,
+    dependencies: List[ScalaDependency] = Nil,
+    required: Boolean = false
+  ) extends InteractiveCodeWidget {
+    val language = Scala2
+    val widgetType: String = "tabbedScala2"
   }
 }
 
