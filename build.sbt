@@ -14,10 +14,9 @@ lazy val root = (project in file("."))
   .settings(
     name := "domain",
     githubOwner := "lambdacademy-dev",
-    resolvers += Resolver.bintrayRepo("colisweb", "maven"),
     libraryDependencies ++= Seq(
       "org.typelevel" %% "cats-core" % "2.0.0",
-      "com.colisweb" %% "scala-opentracing" % "0.1.0",
+      "org.typelevel" %% "cats-effect" % "2.0.0",
       "org.scalatest" %% "scalatest" % "3.0.8" % Test
     )
   )

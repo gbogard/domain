@@ -1,6 +1,8 @@
 package lambda.domain
 
+import org.scalatest._
 import lambda.domain.courses.InteractiveCodeWidget._
+import lambda.domain.courses.{MarkdownText, MultipleChoices, WidgetId}
 
 class WidgetsSpec extends FunSpec with Matchers {
 
