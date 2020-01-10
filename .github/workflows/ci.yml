@@ -1,9 +1,6 @@
 name: Publish
 
-on:
-  push:
-    branches:
-      - master
+on: pull_request
 env:
   GITHUB_USER: CI
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
