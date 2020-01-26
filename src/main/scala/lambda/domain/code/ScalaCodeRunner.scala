@@ -3,21 +3,17 @@ package lambda.domain.code
 import java.io.File
 import ScalaCodeRunner._
 
-import scala.language.postfixOps
-import scala.concurrent.duration._
-
 trait ScalaCodeRunner[F[_]] {
   def runFiles(
       files: List[File],
       dependencies: List[ScalaDependency] = Nil,
-      timeout: FiniteDuration = 30 seconds
   ): ProcessResult[F]
 
-  def runCode(
+  def runCodeString(
     code: String,
-    mainClass: String,
+    wrapInMain: Boolean = true,
+    baseFiles: List[File] = Nil,
     dependencies: List[ScalaDependency] = Nil,
-    timeout: FiniteDuration = 30 seconds
   ): ProcessResult[F]
 }
 

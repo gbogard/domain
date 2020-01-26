@@ -11,6 +11,7 @@ case class MarkdownText(
 ) extends StaticWidget {
   val widgetType: String = "markdownText"
 }
+
 case class MultipleChoices(
     id: WidgetId,
     required: Boolean,
