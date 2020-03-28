@@ -15,8 +15,8 @@ lazy val root = (project in file("."))
     name := "domain",
     githubOwner := "lambdacademy-dev",
     libraryDependencies ++= Seq(
-      "org.typelevel" %% "cats-core" % "2.0.0",
-      "org.typelevel" %% "cats-effect" % "2.0.0",
-      "org.scalatest" %% "scalatest" % "3.0.8" % Test
+      "org.typelevel" %% "cats-core" % "2.1.1",
+      "org.typelevel" %% "cats-effect" % "2.1.2",
+      "org.scalatest" %% "scalatest" % "3.1.1" % Test
     )
   )

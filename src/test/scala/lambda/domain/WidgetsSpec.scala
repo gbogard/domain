@@ -3,8 +3,10 @@ package lambda.domain
 import org.scalatest._
 import lambda.domain.courses.InteractiveCodeWidget._
 import lambda.domain.courses.{MarkdownText, MultipleChoices, WidgetId}
+import org.scalatest.funspec.AnyFunSpec
+import org.scalatest.matchers.should.Matchers
 
-class WidgetsSpec extends FunSpec with Matchers {
+class WidgetsSpec extends AnyFunSpec with Matchers {
 
   describe("Widget type") {
     it("Should be 'simpleScala2' for SimpleScala2CodeWidget") {
