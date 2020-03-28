@@ -11,16 +11,24 @@ case class Course(
     image: Option[Media] = None,
     pages: List[Page]
 ) {
-  def manifest = CourseManifest(id, title, description, image, tags)
+  def manifest = CourseManifest(
+    id,
+    title,
+    description,
+    image,
+    tags,
+    pages.map(Page.Manifest.fromPage)
+  )
 }
 
 object Course {
   case class CourseId(underlying: String) extends AnyVal
   case class CourseManifest(
-      id: CourseId,
-      title: String,
-      description: String,
-      image: Option[Media],
-      tags: List[String]
+    id: CourseId,
+    title: String,
+    description: String,
+    image: Option[Media],
+    tags: List[String],
+    pages: List[Page.Manifest]
   )
 }
