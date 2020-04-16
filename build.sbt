@@ -1,7 +1,7 @@
 import sbtghpackages.TokenSource.Environment
 
 ThisBuild / scalaVersion := "2.12.10"
-ThisBuild / version := "0.4.6"
+ThisBuild / version := "0.4.7"
 ThisBuild / organization := "lambda"
 ThisBuild / organizationName := "Lambdacademy"
 
